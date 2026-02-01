@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>For Vidya 💖</title>
+    <style>
+        :root { --pink: #ffc0cb; --dark-pink: #d02090; --soft-blue: #e0f4ff; }
+        body { background-color: #fff0f5; font-family: 'Arial', sans-serif; display: flex; flex-direction: column; align-items: center; justify-content: center; height: 100vh; margin: 0; overflow: hidden; }
+        .screen { text-align: center; display: none; width: 90%; max-width: 400px; animation: fadeIn 0.5s; }
+        .active { display: block; }
+        h1 { color: var(--dark-pink); font-size: 1.5rem; margin-bottom: 20px; }
+        .btn { padding: 12px 25px; border: none; border-radius: 25px; cursor: pointer; font-weight: bold; transition: 0.3s; margin: 10px; }
+        #yesBtn { background-color: var(--dark-pink); color: white; }
+        #noBtn { background-color: white; color: var(--dark-pink); position: absolute; border: 1px solid var(--pink); }
+        .gift-container { display: flex; justify-content: center; gap: 15px; margin-top: 20px; }
+        .gift-box { background: white; padding: 20px; border-radius: 15px; border: 3px dashed var(--pink); cursor: pointer; font-size: 30px; }
+        .card { background: white; padding: 20px; border-radius: 20px; box-shadow: 0 5px 15px rgba(0,0,0,0.05); position: relative; }
+        .heart-collage { display: grid; grid-template-columns: repeat(3, 1fr); gap: 5px; width: 250px; margin: 0 auto; clip-path: path('M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z'); }
+        .heart-collage img { width: 100%; height: 80px; object-fit: cover; }
+        .note-text { font-family: 'cursive'; font-size: 0.9rem; line-height: 1.6; color: #444; text-align: left; }
+        @keyframes fadeIn { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: translateY(0); } }
+    </style>
+</head>
+<body>
+
+    <div id="screen-ques" class="screen active">
+        <img src="https://media.giphy.com/media/v1.Y2lkPTc5MGI3NjExOHpueW9oZ3R5Z3R5Z3R5Z3R5Z3R5Z3R5Z3R5Z3R5Z3R5JmVwPXYxX2ludGVybmFsX2dpZl9ieV9pZCZjdD1z/v4aP0r8L6wK9C/giphy.gif" width="150">
+        <h1>Will you be my Valentine, Vidya? 💖</h1>
+        <button class="btn" id="yesBtn" onclick="nextScreen('screen-menu')">Yes!</button>
+        <button class="btn" id="noBtn" onmouseover="moveNo()">No</button>
+    </div>
+
+    <div id="screen-menu" class="screen">
+        <h1>Pick a Gift! 🎁</h1>
+        <div class="gift-container">
+            <div class="gift-box" onclick="nextScreen('screen-g1-s1')">🎁<br><small style="font-size:10px">Gift 1</small></div>
+            <div class="gift-box" onclick="startGift2()">🎁<br><small style="font-size:10px">Gift 2</small></div>
+            <div class="gift-box" onclick="nextScreen('screen-g3')">🎁<br><small style="font-size:10px">Gift 3</small></div>
+        </div>
+    </div>
+
+    <div id="screen-g1-s1" class="screen">
+        <div class="card">
+            <img src="https://media.giphy.com/media/v1.Y2lkPTc5MGI3NjExOHpueW9oZ3R5Z3R5Z3R5Z3R5Z3R5Z3R5Z3R5Z3R5Z3R5JmVwPXYxX2ludGVybmFsX2dpZl9ieV9pZCZjdD1z/v4aP0r8L6wK9C/giphy.gif" width="100">
+            <p>you are the best thing that ever happened to me</p>
+            <button class="btn" id="yesBtn" onclick="nextScreen('screen-g1-s2')">Click here</button>
+        </div>
+    </div>
+
+    <div id="screen-g1-s2" class="screen">
+        <div class="card" style="border-top: 10px solid var(--pink);">
+            <h3 style="color:var(--dark-pink)">from my heart...</h3>
+            <p class="note-text">To the love of my life,<br>you make my life so meaningful and I am so lucky to have you I love you wholeheartedly and I can’t wait to continue loving you for the rest of my life. I know I tell you this everyday but you are my world vidya. <br><br>I love you.</p>
+            <button class="btn" onclick="nextScreen('screen-menu')">Back to Menu</button>
+        </div>
+    </div>
+
+    <div id="screen-g2-s1" class="screen">
+        <div class="card">
+            <img src="https://via.placeholder.com/250x250?text=Your+Couple+Photo" style="width:100%; border-radius:15px;">
+            <p>Ready for a surprise?</p>
+            <button class="btn" id="yesBtn" onclick="nextScreen('screen-g2-s2')">Next</button>
+        </div>
+        <iframe id="spotify-player" style="border-radius:12px; margin-top:10px" src="https://open.spotify.com/embed/track/3ZlbYm8vXF7SclfXG9pYpI" width="100%" height="80" frameBorder="0" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"></iframe>
+    </div>
+
+    <div id="screen-g2-s2" class="screen">
+        <div class="heart-collage">
+            <img src="https://via.placeholder.com/100"> <img src="https://via.placeholder.com/100"> <img src="https://via.placeholder.com/100">
+            <img src="https://via.placeholder.com/100"> <img src="https://via.placeholder.com/100"> <img src="https://via.placeholder.com/100">
+            <img src="https://via.placeholder.com/100"> <img src="https://via.placeholder.com/100"> <img src="https://via.placeholder.com/100">
+        </div>
+        <button class="btn" onclick="nextScreen('screen-menu')">Back to Menu</button>
+    </div>
+
+    <div id="screen-g3" class="screen">
+        <div id="flipbook-container" class="card">
+            <p id="reasonText" style="font-weight:bold; color:var(--dark-pink)">Reason #1</p>
+            <p id="reasonVal">You are everything I’ve ever dreamed of vidya</p>
+            <button class="btn" id="yesBtn" onclick="nextReason()">Next Reason</button>
+        </div>
+    </div>
+
+    <script>
+        const reasons = [
+            "You are everything I’ve ever dreamed of vidya",
+            "you are kind and soo sweet to me",
+            "You forgive everything and forget my wrong doings",
+            "Solladha asai ellamay ne dha vidya",
+            "you love me sooooo much",
+            "I Love You Forever! ❤️"
+        ];
+        let reasonIdx = 0;
+
+        function nextScreen(id) {
+            document.querySelectorAll('.screen').forEach(s => s.classList.remove('active'));
+            document.getElementById(id).classList.add('active');
+        }
+
+        function moveNo() {
+            const btn = document.getElementById('noBtn');
+            btn.style.left = Math.random() * (window.innerWidth - 100) + 'px';
+            btn.style.top = Math.random() * (window.innerHeight - 50) + 'px';
+        }
+
+        function startGift2() {
+            nextScreen('screen-g2-s1');
+            // Music starts automatically due to the Spotify embed "autoplay" attribute logic
+        }
+
+        function nextReason() {
+            reasonIdx++;
+            if (reasonIdx < reasons.length) {
+                document.getElementById('reasonText').innerText = "Reason #" + (reasonIdx + 1);
+                if(reasonIdx == 5) document.getElementById('reasonText').innerText = "The Biggest Reason:";
+                document.getElementById('reasonVal').innerText = reasons[reasonIdx];
+            } else {
+                nextScreen('screen-menu');
+                reasonIdx = 0; // reset
+            }
+        }
+    </script>
+</body>
+</html>
